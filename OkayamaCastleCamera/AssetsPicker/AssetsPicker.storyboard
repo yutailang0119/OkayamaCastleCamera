@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Assets Picker Controller-->
+        <scene sceneID="8vO-cg-Qfp">
+            <objects>
+                <viewController storyboardIdentifier="AssetsPickerController" id="sRg-cN-h73" customClass="AssetsPickerController" customModule="OkayamaCastleCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4kJ-6U-GWf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H58-9h-1Px">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kJa-qg-vko">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U61-nh-Cb0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="wca-Xa-XRg">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Qzi-iN-fHB">
+                                            <connections>
+                                                <action selector="tappedCancel:" destination="sRg-cN-h73" id="aDA-2d-fzG"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A24-b1-MBt" firstAttribute="trailing" secondItem="H58-9h-1Px" secondAttribute="trailing" id="7nd-bh-9f8"/>
+                            <constraint firstItem="U61-nh-Cb0" firstAttribute="top" secondItem="A24-b1-MBt" secondAttribute="top" id="8zS-Vx-XbC"/>
+                            <constraint firstItem="H58-9h-1Px" firstAttribute="top" secondItem="U61-nh-Cb0" secondAttribute="bottom" id="Iht-ET-QmD"/>
+                            <constraint firstItem="H58-9h-1Px" firstAttribute="leading" secondItem="A24-b1-MBt" secondAttribute="leading" id="aoL-Xu-fXY"/>
+                            <constraint firstItem="U61-nh-Cb0" firstAttribute="leading" secondItem="A24-b1-MBt" secondAttribute="leading" id="fg9-kI-vWp"/>
+                            <constraint firstItem="U61-nh-Cb0" firstAttribute="trailing" secondItem="A24-b1-MBt" secondAttribute="trailing" id="fwo-rW-z4C"/>
+                            <constraint firstItem="A24-b1-MBt" firstAttribute="bottom" secondItem="H58-9h-1Px" secondAttribute="bottom" id="kUj-De-9C3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A24-b1-MBt"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="H58-9h-1Px" id="Wv0-kJ-XNZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jqk-hR-EZV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="988" y="134"/>
+        </scene>
+    </scenes>
+</document>

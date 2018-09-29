@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Realtime Mask View Controller-->
+        <scene sceneID="XHa-ex-gzq">
+            <objects>
+                <viewController storyboardIdentifier="RealtimeMaskViewController" id="6hV-mn-g5G" customClass="RealtimeMaskViewController" customModule="OkayamaCastleCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEn-Bh-UN2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EHl-V8-UlL">
+                                <rect key="frame" x="0.0" y="30" width="375" height="627"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="SsE-NL-555">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mkk-Ko-c5H">
+                                                <rect key="frame" x="16" y="0.0" width="343" height="29"/>
+                                                <segments>
+                                                    <segment title="Original"/>
+                                                    <segment title="Clipped"/>
+                                                    <segment title="Blended"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="selectedMask:" destination="6hV-mn-g5G" eventType="valueChanged" id="mnF-zP-lqA"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="mkk-Ko-c5H" secondAttribute="trailing" constant="16" id="EjC-8D-QQ3"/>
+                                            <constraint firstItem="mkk-Ko-c5H" firstAttribute="top" secondItem="SsE-NL-555" secondAttribute="top" id="KYe-tx-k1E"/>
+                                            <constraint firstItem="mkk-Ko-c5H" firstAttribute="leading" secondItem="SsE-NL-555" secondAttribute="leading" constant="16" id="LqR-WR-Mw4"/>
+                                            <constraint firstAttribute="bottom" secondItem="mkk-Ko-c5H" secondAttribute="bottom" id="e7c-hk-vO6"/>
+                                        </constraints>
+                                    </view>
+                                    <mtkView contentMode="scaleAspectFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Invalid" translatesAutoresizingMaskIntoConstraints="NO" id="foi-6w-N8d">
+                                        <rect key="frame" x="0.0" y="38" width="375" height="501"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </mtkView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-Bs-sqq">
+                                        <rect key="frame" x="0.0" y="549" width="375" height="78"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="AF3-VF-sMf">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="em4-tr-rFv">
+                                                        <rect key="frame" x="16" y="0.0" width="343" height="29"/>
+                                                        <segments>
+                                                            <segment title="Normal"/>
+                                                            <segment title="Cover1"/>
+                                                            <segment title="Cover2"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="em4-tr-rFv" secondAttribute="trailing" constant="16" id="HKV-bL-V1t"/>
+                                                    <constraint firstAttribute="bottom" secondItem="em4-tr-rFv" secondAttribute="bottom" id="Hqz-rH-kU2"/>
+                                                    <constraint firstItem="em4-tr-rFv" firstAttribute="top" secondItem="AF3-VF-sMf" secondAttribute="top" id="Yjp-h1-Law"/>
+                                                    <constraint firstItem="em4-tr-rFv" firstAttribute="leading" secondItem="AF3-VF-sMf" secondAttribute="leading" constant="16" id="niM-f9-QR5"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WWW-Vc-Igg">
+                                                <rect key="frame" x="0.0" y="48" width="375" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IxC-kQ-wnD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
+                                                        <state key="normal" title="Background"/>
+                                                        <connections>
+                                                            <action selector="tappedSelectBackground:" destination="6hV-mn-g5G" eventType="touchUpInside" id="fi0-bv-GZ1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-Al-72K">
+                                                        <rect key="frame" x="197.5" y="0.0" width="177.5" height="30"/>
+                                                        <state key="normal" title="Shutter"/>
+                                                        <connections>
+                                                            <action selector="tappedShutter:" destination="6hV-mn-g5G" eventType="touchUpInside" id="S3Q-gE-3UP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ANJ-72-7fI" firstAttribute="trailing" secondItem="EHl-V8-UlL" secondAttribute="trailing" id="8Ah-qt-0pH"/>
+                            <constraint firstItem="EHl-V8-UlL" firstAttribute="leading" secondItem="eEn-Bh-UN2" secondAttribute="leading" id="L15-2b-OUB"/>
+                            <constraint firstItem="ANJ-72-7fI" firstAttribute="bottom" secondItem="EHl-V8-UlL" secondAttribute="bottom" constant="10" id="cmI-Cc-bzk"/>
+                            <constraint firstItem="EHl-V8-UlL" firstAttribute="top" secondItem="ANJ-72-7fI" secondAttribute="top" constant="10" id="jbp-QG-Viv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ANJ-72-7fI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pIb-Hg-Fs2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bFD-O6-ymt">
+                            <connections>
+                                <action selector="tappedSwitchCamera:" destination="6hV-mn-g5G" id="xCK-Zy-xhS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundPickerButton" destination="IxC-kQ-wnD" id="fML-h7-sBh"/>
+                        <outlet property="coverSegmentedControl" destination="em4-tr-rFv" id="1FA-XH-iQQ"/>
+                        <outlet property="maskSegmentedControl" destination="mkk-Ko-c5H" id="vOR-L1-Fz3"/>
+                        <outlet property="mtkView" destination="foi-6w-N8d" id="qGd-NB-Zaa"/>
+                        <outlet property="shutterButton" destination="vEP-Al-72K" id="HD5-HC-48n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="es2-Ly-s9X" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>

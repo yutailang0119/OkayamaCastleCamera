@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Portrait Matte View Controller-->
+        <scene sceneID="uFp-4L-ayZ">
+            <objects>
+                <viewController storyboardIdentifier="PortraitMatteViewController" id="OuQ-H4-abn" customClass="PortraitMatteViewController" customModule="OkayamaCastleCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p47-b3-MuI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="81U-mj-5Oo">
+                                <rect key="frame" x="0.0" y="30" width="375" height="627"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-v4-tsv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mj7-pQ-hyK">
+                                                <rect key="frame" x="16" y="0.0" width="343" height="29"/>
+                                                <segments>
+                                                    <segment title="Original"/>
+                                                    <segment title="Matte"/>
+                                                    <segment title="Masked"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="selectedMaskType:" destination="OuQ-H4-abn" eventType="valueChanged" id="u9u-vc-P4O"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Mj7-pQ-hyK" secondAttribute="bottom" id="IKn-2S-59R"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mj7-pQ-hyK" secondAttribute="trailing" constant="16" id="aeZ-Od-dbU"/>
+                                            <constraint firstItem="Mj7-pQ-hyK" firstAttribute="top" secondItem="OJ1-v4-tsv" secondAttribute="top" id="ngv-T0-vha"/>
+                                            <constraint firstItem="Mj7-pQ-hyK" firstAttribute="leading" secondItem="OJ1-v4-tsv" secondAttribute="leading" constant="16" id="s9k-ns-PfK"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="SOm-Rv-0b7">
+                                        <rect key="frame" x="0.0" y="38" width="375" height="509"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMs-pO-8AL">
+                                        <rect key="frame" x="0.0" y="557" width="375" height="28"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Q0D-ZS-RMQ">
+                                                <rect key="frame" x="16" y="0.0" width="343" height="29"/>
+                                                <segments>
+                                                    <segment title="Normal"/>
+                                                    <segment title="Cover1"/>
+                                                    <segment title="Cover2"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="selectedCover:" destination="OuQ-H4-abn" eventType="valueChanged" id="hsT-l7-N88"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Q0D-ZS-RMQ" firstAttribute="top" secondItem="lMs-pO-8AL" secondAttribute="top" id="Dch-i3-iuZ"/>
+                                            <constraint firstItem="Q0D-ZS-RMQ" firstAttribute="leading" secondItem="lMs-pO-8AL" secondAttribute="leading" constant="16" id="W0d-pw-eKt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Q0D-ZS-RMQ" secondAttribute="trailing" constant="16" id="hGO-48-D7V"/>
+                                            <constraint firstAttribute="bottom" secondItem="Q0D-ZS-RMQ" secondAttribute="bottom" id="lq7-bE-O7G"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IMV-tH-vto">
+                                        <rect key="frame" x="0.0" y="595" width="375" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sua-qq-gsw">
+                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Background"/>
+                                                <connections>
+                                                    <action selector="tappedBackgroundPiccker:" destination="OuQ-H4-abn" eventType="touchUpInside" id="AMY-qQ-zSZ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-Zi-qvw">
+                                                <rect key="frame" x="131.5" y="0.0" width="112" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Shutter"/>
+                                                <connections>
+                                                    <action selector="tappedShutter:" destination="OuQ-H4-abn" eventType="touchUpInside" id="DGI-gL-AHb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk1-ML-Tdu">
+                                                <rect key="frame" x="263.5" y="0.0" width="111.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Portrait"/>
+                                                <connections>
+                                                    <action selector="tappedPortraitPiccker:" destination="OuQ-H4-abn" eventType="touchUpInside" id="oaf-7w-YWy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5gg-xV-95Y" firstAttribute="trailing" secondItem="81U-mj-5Oo" secondAttribute="trailing" id="3wB-eV-lmH"/>
+                            <constraint firstItem="5gg-xV-95Y" firstAttribute="bottom" secondItem="81U-mj-5Oo" secondAttribute="bottom" constant="10" id="mAD-xT-StT"/>
+                            <constraint firstItem="81U-mj-5Oo" firstAttribute="leading" secondItem="5gg-xV-95Y" secondAttribute="leading" id="odR-3j-ZZx"/>
+                            <constraint firstItem="81U-mj-5Oo" firstAttribute="top" secondItem="5gg-xV-95Y" secondAttribute="top" constant="10" id="piO-mT-sJM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5gg-xV-95Y"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundPickerButton" destination="sua-qq-gsw" id="ePe-ea-sV2"/>
+                        <outlet property="coverSegmentedControl" destination="Q0D-ZS-RMQ" id="mOW-YH-GJm"/>
+                        <outlet property="imageView" destination="SOm-Rv-0b7" id="Fw1-v2-QIn"/>
+                        <outlet property="matteSegmentedControl" destination="Mj7-pQ-hyK" id="Mzl-B2-a8K"/>
+                        <outlet property="shutterButton" destination="qkj-Zi-qvw" id="nlO-Tp-nzW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l88-58-r4d" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="27.436281859070466"/>
+        </scene>
+    </scenes>
+</document>
